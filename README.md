@@ -1,4 +1,4 @@
-#It's a template later I will change it
+# It's a template later I will change it
 
 # Frontend Mentor - Article preview component
 
