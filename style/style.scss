@@ -100,7 +100,7 @@ img{
 }
 
 .hover__share{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 2.3em 2.5em 2.8em 2.5em;
@@ -110,8 +110,6 @@ img{
     color: $tertiaryColor;
     background-color: $primaryColor;
     transition: .5s ease;
-    //! Make it rem or em
-    //transition: .5s ease;
     margin: 2em -1.9em -2em -1.9em;
     img{
         border-radius: 0px 0px 0px 0px;
