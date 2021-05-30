@@ -16,12 +16,10 @@ img{
     margin-top: 4em;
 }
 
-//TODO: Add the missing colors
 .card{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    //! FIX THE MAX WIDTH 
     max-width: $breakpoint-mobile;
     background: white;
     border-radius: 20px;
@@ -43,14 +41,13 @@ img{
     }
 }
 
-//TODO: Add the missing colors
 .info__author{
 
     padding-bottom: 1.5em;
     margin: 0 1.5em;
     .info__author__img{
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         
     }
@@ -80,10 +77,16 @@ img{
         border-radius: 50%;
         border: none;
         margin-left: 7em;
-
+        /*This was add*/
+        position: relative;
+        z-index: 10;
         &:hover{
             opacity: 0.75;
             cursor: pointer;
+        }
+
+        &:active{
+            background-color: $primaryColor;
         }
     }
 
@@ -91,15 +94,36 @@ img{
         width: 2.4em;
         padding: 0.5em;
         margin-right: 0;
+        
     }
 
-    .hover__share{
-        img, p{
-            display: none;
-        }
-    }
 }
 
+.hover__share{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.3em 2.5em 2.8em 2.5em;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.8em;
+    letter-spacing: 0.5em;
+    color: $tertiaryColor;
+    background-color: $primaryColor;
+    transition: .5s ease;
+    //! Make it rem or em
+    //transition: .5s ease;
+    margin: 2em -1.9em -2em -1.9em;
+    img{
+        border-radius: 0px 0px 0px 0px;
+        margin-left: 1.5em;
+        transition: .5s ease;
+        &:hover{
+            opacity: 0.75;
+            cursor: pointer;
+        }
+    }
+    // display: none;
+}
 
 @media (min-width: 1000px){
     .card{
@@ -142,7 +166,44 @@ img{
             margin-left: 8em;
         }
     }
+
+    /* Styles for the hover effect that override the author */
+    .hover__share{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        padding: 1.3em 2.5em;
+        border-radius: 10px;
+        font-size: 0.8em;
+        letter-spacing: 0.5em;
+        color: $tertiaryColor;
+        background-color: $primaryColor;
+        top: 50%;
+        left: 76%;
+
+    img{
+        border-radius: 0px 0px 0px 0px;
+        margin-left: 1.5em;
+
+        &:hover{
+            opacity: 0.75;
+            cursor: pointer;
+        }
+    }
+
+    .triangle{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 43px;
+        left: 112px;
+        background-color: $primaryColor;
+        transform: rotateY(0deg) rotate(45deg);
+    }
+
+    display: none;
+}
 }
 
-.attribution { font-size: 11px; text-align: center; margin-top: 3em;}
+.attribution { font-size: 11px; text-align: center; margin-top: 3em; margin-bottom: 3em;}
 .attribution a { color: hsl(228, 45%, 44%); }

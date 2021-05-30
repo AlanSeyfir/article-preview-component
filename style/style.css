@@ -62,9 +62,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -100,11 +100,18 @@ img {
   border-radius: 50%;
   border: none;
   margin-left: 7em;
+  /*This was add*/
+  position: relative;
+  z-index: 10;
 }
 
 .info__author button:hover {
   opacity: 0.75;
   cursor: pointer;
+}
+
+.info__author button:active {
+  background-color: #48556a;
 }
 
 .info__author .icon__share {
@@ -113,8 +120,37 @@ img {
   margin-right: 0;
 }
 
-.info__author .hover__share img, .info__author .hover__share p {
-  display: none;
+.hover__share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2.3em 2.5em 2.8em 2.5em;
+  border-radius: 0 0 10px 10px;
+  font-size: 0.8em;
+  letter-spacing: 0.5em;
+  color: #9eafc2;
+  background-color: #48556a;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  margin: 2em -1.9em -2em -1.9em;
+}
+
+.hover__share img {
+  border-radius: 0px 0px 0px 0px;
+  margin-left: 1.5em;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.hover__share img:hover {
+  opacity: 0.75;
+  cursor: pointer;
 }
 
 @media (min-width: 1000px) {
@@ -154,12 +190,50 @@ img {
   .card button {
     margin-left: 8em;
   }
+  /* Styles for the hover effect that override the author */
+  .hover__share {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    padding: 1.3em 2.5em;
+    border-radius: 10px;
+    font-size: 0.8em;
+    letter-spacing: 0.5em;
+    color: #9eafc2;
+    background-color: #48556a;
+    top: 50%;
+    left: 76%;
+    display: none;
+  }
+  .hover__share img {
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 1.5em;
+  }
+  .hover__share img:hover {
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  .hover__share .triangle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 43px;
+    left: 112px;
+    background-color: #48556a;
+    -webkit-transform: rotateY(0deg) rotate(45deg);
+            transform: rotateY(0deg) rotate(45deg);
+  }
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
   margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .attribution a {
