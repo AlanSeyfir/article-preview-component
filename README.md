@@ -38,7 +38,6 @@ Users should be able to:
 
 My first encounter with event listeners and some basic logic in Javascript.
 
-To see how you can add code snippets, see below:
 ```js
 shareButton.addEventListener('click', function(){
     let shareInfo = document.getElementById('hoverInfo');
